@@ -2,6 +2,7 @@ use super::responses::{ChatCompletionChunk, EmbeddingResponse};
 #[cfg(feature = "server")]
 use axum::response::sse::Event;
 use flume::Receiver;
+#[cfg(feature = "server")]
 use futures::Stream;
 use std::{
     pin::Pin,
@@ -29,6 +30,7 @@ pub struct Streamer {
     pub status: StreamingStatus,
 }
 
+#[cfg(feature = "server")]
 impl Stream for Streamer {
     type Item = Result<Event, axum::Error>;
 
