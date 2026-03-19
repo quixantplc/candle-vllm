@@ -1,4 +1,5 @@
 use super::responses::{ChatCompletionChunk, EmbeddingResponse};
+#[cfg(feature = "server")]
 use axum::response::sse::Event;
 use flume::Receiver;
 use futures::Stream;
